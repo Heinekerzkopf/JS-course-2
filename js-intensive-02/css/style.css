@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-family: "Lato", sans-serif;
+  background-color: rgb(144, 194, 236);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  min-height: 100%;
+  margin: 0 auto;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+[class*=__container] {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+section {
+  padding: 45px 0;
+  min-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 34px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 35px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.wrapper__container {
+  margin-top: 50px;
+}
+.wrapper__container p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+
+.header__menu {
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 5;
+}
+
+.menu__list {
+  display: flex;
+  gap: 50px;
+}
+.menu__link {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: black;
+}
+.menu__link-active {
+  color: rgb(172, 138, 27);
+  font-weight: 700;
+}
+
+.section__title {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 1px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.btnUp {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  pointer-events: none;
+}
+
+.btnUp-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spoiler__box {
+  border: 1px solid black;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 20px 20px 0 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.spoiler__box:not(:last-child) {
+  margin-bottom: 20px;
+}
+.spoiler__question {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  transition: all 0.2s ease 0s;
+}
+.spoiler__question::before, .spoiler__question::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  right: 10px;
+  top: 10px;
+  background-color: #000;
+  transition: all 0.2s ease 0s;
+}
+.spoiler__question::after {
+  transform: rotate(-45deg);
+}
+.spoiler__question::before {
+  transform: rotate(45deg);
+  right: 23px;
+}
+.spoiler__answer {
+  padding-top: 10px;
+  border-top: 1px solid black;
+  transition: all 0.5s ease 0s;
+  max-height: 0;
+  transform: translateY(100%);
+  overflow: hidden;
+}
+.spoiler__arrow {
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+
+.spoiler__question-active::before, .spoiler__question-active::after {
+  background-color: red;
+}
+.spoiler__question-active::after {
+  transform: rotate(45deg);
+}
+.spoiler__question-active::before {
+  transform: rotate(-45deg);
+  right: 23px;
+}
+
+.spoiler__answer-active {
+  max-height: 100px;
+  transform: translateY(0);
+  overflow: auto;
+}
